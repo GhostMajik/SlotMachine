@@ -1,0 +1,2 @@
+# SlotMachine
+Android Dev project
