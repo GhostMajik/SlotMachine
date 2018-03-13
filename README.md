@@ -1,2 +1,0 @@
-# SlotMachine
-Android Dev project

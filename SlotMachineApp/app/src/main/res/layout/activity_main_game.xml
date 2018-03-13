@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.androiddev.ghostmajik.slotmachineapp.MainGameActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/SlotBackground"
+            android:layout_width="400dp"
+            android:layout_height="500dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/slotmachine_blank"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="89dp" />
+
+        <ImageView
+            android:id="@+id/topBackground"
+            android:layout_width="1920dp"
+            android:layout_height="140dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/holo_blue_dark" />
+
+        <ImageView
+            android:id="@+id/botBackground"
+            android:layout_width="1920dp"
+            android:layout_height="142dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/background_dark" />
+
+        <Button
+            android:id="@+id/minBetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_alignLeft="@+id/betAmountText"
+            android:layout_alignStart="@+id/betAmountText"
+            android:layout_alignTop="@+id/botBackground"
+            android:background="@android:drawable/presence_online"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:text="Bet Min"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="358dp" />
+
+        <Button
+            android:id="@+id/spinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_alignLeft="@+id/Reel3"
+            android:layout_alignStart="@+id/Reel3"
+            android:layout_alignTop="@+id/botBackground"
+            android:background="@android:drawable/star_big_on"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:text="Spin"
+            tools:layout_editor_absoluteX="251dp"
+            tools:layout_editor_absoluteY="354dp" />
+
+        <Button
+            android:id="@+id/maxBetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_alignTop="@+id/botBackground"
+            android:layout_centerHorizontal="true"
+            android:background="@android:drawable/presence_online"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:text="Bet Max"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="358dp" />
+
+        <TextView
+            android:id="@+id/currentMoneyText"
+            android:layout_width="150dp"
+            android:layout_height="41dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Money: 1000"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="158dp" />
+
+        <TextView
+            android:id="@+id/betAmountText"
+            android:layout_width="150dp"
+            android:layout_height="41dp"
+            android:layout_above="@+id/maxBetButton"
+            android:layout_alignLeft="@+id/resetButton"
+            android:layout_alignStart="@+id/resetButton"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginStart="21dp"
+            android:text="Bet: $0"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/currentMoneyText"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/betOutcomeText"
+            android:layout_width="185dp"
+            android:layout_height="41dp"
+            android:layout_alignBaseline="@+id/betAmountText"
+            android:layout_alignBottom="@+id/betAmountText"
+            android:layout_alignEnd="@+id/spinButton"
+            android:layout_alignRight="@+id/spinButton"
+            android:text="$0"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <TextView
+            android:id="@+id/jackPotText"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignEnd="@+id/Reel3"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/Reel3"
+            android:text="Jackpot: 5000"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/Reel3"
+            android:layout_width="90dp"
+            android:layout_height="180dp"
+            android:layout_above="@+id/betOutcomeText"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/maxBetButton"
+            android:layout_toRightOf="@+id/maxBetButton"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/seven" />
+
+        <ImageView
+            android:id="@+id/Reel2"
+            android:layout_width="90dp"
+            android:layout_height="180dp"
+            android:layout_alignLeft="@+id/maxBetButton"
+            android:layout_alignStart="@+id/maxBetButton"
+            android:layout_alignTop="@+id/Reel3"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/seven" />
+
+        <ImageView
+            android:id="@+id/Reel1"
+            android:layout_width="90dp"
+            android:layout_height="180dp"
+            android:layout_alignTop="@+id/Reel2"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_toLeftOf="@+id/Reel2"
+            android:layout_toStartOf="@+id/Reel2"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/seven" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/potoGold"
+            android:layout_toStartOf="@+id/potoGold"
+            android:background="@drawable/custombutton"
+            android:text="Reset"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="447dp" />
+
+        <Button
+            android:id="@+id/QuitButton"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/potoGold"
+            android:layout_toRightOf="@+id/potoGold"
+            android:background="@drawable/custombutton"
+            android:text="Quit" />
+
+        <ImageView
+            android:id="@+id/potoGold"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_alignBottom="@+id/QuitButton"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/potofgold" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/topBackground"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="casual"
+            android:text="Pot Of Gold Slots"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
